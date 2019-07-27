@@ -4,7 +4,7 @@ LABEL maintainer "Bitnami <leaderjs@live.com>"
 # chromedriver
 ENV CR_5 2.46
 
-# node_sass
+# node_sass 
 ENV NS_5 4.9.0
 
 # ENV NS_A 4.11.0

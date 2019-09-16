@@ -1,0 +1,21 @@
+FROM centos:7.6.1810
+
+ENV GOVERSION=1.13 \
+    OS=linux \
+    ARCH=amd64 \
+    GOROOT=/usr/local/go \
+    NODEVERSION=10.15.3 \
+
+# 安装 go
+RUN curl -O -s https://dl.google.com/go/go$GOVERSION.$OS-$ARCH.tar.gz \
+    tar -C /usr/local -xzf go$GOVERSION.$OS-$ARCH.tar.gz && rm -f go$VERSION.$OS-$ARCH.tar.gz
+
+RUN echo "export GOROOT=/usr/local/go" >> /etc/profile \
+    echo "export PATH=$PATH:$GOROOT/bin" >> /etc/profile
+
+# 安装 nodejs
+RUN curl -O -s http://cdn.npm.taobao.org/dist/node/v$NODEVERSION/node-v$NODEVERSION-$OS-x64.tar.xz \
+    tar -C /usr/ vxf node-v10.15.3-linux-x64.tar.xz && rm -f node-v$NODEVERSION-$OS-x64.tar.xz
+
+RUN ln -s /usr/node-v10.15.3-linux-x64/bin/npm  /usr/local/bin/ \
+    ln -s /usr/node-v10.15.3-linux-x64/bin/node  /usr/local/bin/

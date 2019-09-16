@@ -4,7 +4,7 @@ ENV GOVERSION=1.13 \
     OS=linux \
     ARCH=amd64 \
     GOROOT=/usr/local/go \
-    NODEVERSION=10.15.3 \
+    NODEVERSION=10.15.3
 
 # 安装 go
 RUN curl -O -s https://dl.google.com/go/go$GOVERSION.$OS-$ARCH.tar.gz \

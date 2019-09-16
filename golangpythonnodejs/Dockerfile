@@ -7,8 +7,8 @@ ENV GOVERSION=1.13 \
     NODEVERSION=10.15.3
 
 # 安装 go
-RUN curl -O -s "https://dl.google.com/go/go$GOVERSION.$OS-$ARCH.tar.gz" \
-    tar -C "/usr/local -xzf go$GOVERSION.$OS-$ARCH.tar.gz" && rm -f "go$VERSION.$OS-$ARCH.tar.gz"
+RUN curl -O -s "https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz" \
+    tar -C "/usr/local -xzf go${GOVERSION}.${OS}-${ARCH}.tar.gz" && rm -f "go${VERSION}.${OS}-${ARCH}.tar.gz"
 
 RUN echo "export GOROOT=/usr/local/go" >> /etc/profile \
     echo "export PATH=$PATH:$GOROOT/bin" >> /etc/profile

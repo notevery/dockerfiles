@@ -15,7 +15,7 @@ RUN echo "export GOROOT=/usr/local/go" >> /etc/profile && \
 
 # 安装 nodejs
 RUN curl -O -s http://cdn.npm.taobao.org/dist/node/v10.15.3/node-v10.15.3-linux-x64.tar.xz && \
-    tar vxf node-v10.15.3-linux-x64.tar.xz && rm -f node-v10.15.3-linux-x64.tar.xz -C /usr/ 
+    tar vxf node-v10.15.3-linux-x64.tar.xz -C /usr/ && rm -f node-v10.15.3-linux-x64.tar.xz
 
 RUN ln -s /usr/node-v10.15.3-linux-x64/bin/npm  /usr/local/bin/ && \
     ln -s /usr/node-v10.15.3-linux-x64/bin/node  /usr/local/bin/

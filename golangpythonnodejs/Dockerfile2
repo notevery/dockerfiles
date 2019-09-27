@@ -1,0 +1,21 @@
+FROM centos7.6.1810:go1.13_node10.15.3
+
+#ENV GOPATH=/root/go
+# 在上一个镜像里的ENV也可以在这里取到
+# 在 dockerfile里改 /etc/profile 是不行的！
+
+#RUN git clone https://github.com/Tencent/bk-cmdb  /root/go/src/configcenter
+
+# When using COPY with more than one source file, the destination must be a directory and end with a /
+COPY golangpythonnodejs/configcenter /root/go/src/configcenter/
+
+WORKDIR /root/go/src/configcenter/src
+
+USER root
+
+# 
+# RUN npm config set registry http://11.11.174.189:8081/repository/a6-npm-public/ \
+#     npm config set sass_binary_path /tmp/linux-x64-67_binding.node
+
+# make ui 和 make server
+RUN make && make package

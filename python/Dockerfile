@@ -18,4 +18,4 @@ RUN tar -xvf ./Python-3.6.9.tgz
 WORKDIR /tmp/Python-3.6.9
 RUN ./configure && make && make install
 
-RUN rm -rf /usr/bin/python && ln -s /usr/local/bin/python3.6 /usr/bin/python
+RUN rm -rf /usr/bin/python && ln -s /usr/local/bin/python3.6 /usr/bin/python && rm -rf /usr/bin/python-config && ln -s /usr/local/bin/python3.6-config /usr/bin/python-config
